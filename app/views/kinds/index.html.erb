@@ -1,0 +1,23 @@
+<h2>Kinds</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Active</th>
+      <th>Size</th>
+      <th><%= link_to "Add new kind", new_kind_path %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kinds.each do |kind| %>
+      <tr>
+        <td><%= kind.name %></td>
+        <td class="<%= kind.color %>" ><%= kind.active? %></td>
+        <td class="<%= kind.color %>" ><%= kind.size %></td>
+        <td><%= link_to "Edit", edit_kind_path(kind) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

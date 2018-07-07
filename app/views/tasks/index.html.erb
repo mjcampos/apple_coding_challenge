@@ -1,0 +1,26 @@
+<%= link_to "Go to kinds", kinds_path %>
+
+<h2>Tasks</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Kind</th>
+      <th>Category</th>
+      <!-- Should we add more thinsg to the table? -->
+      <th><%= link_to "Add new task", "" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

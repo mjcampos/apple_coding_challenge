@@ -1,0 +1,34 @@
+<%= form_for kind, html: { class: "form" } do |form| %>
+  <% if kind.errors.any? %>
+    <p><%= pluralize(kind.errors.count, "error") %> prohibited this kind from being saved:</p>
+
+      <ul>
+        <% kind.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <span class="form-message required">This is a required field.</span>
+    </div>
+
+    <div class="field">
+      <label> Size </label>      <%= form.text_field :size %>
+    </div>
+
+    <div class="field">
+      <%= form.label :active %>
+      <%= form.check_box :active %>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <%= link_to "Cancel", kinds_path, class: "other-action" %>
+    <%= form.submit %>
+  </div>
+<% end %>
