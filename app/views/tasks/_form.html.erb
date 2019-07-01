@@ -1,0 +1,45 @@
+<%= form_for task, html: { class: "form" } do |form| %>
+  <% if task.errors.any? %>
+    <p><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</p>
+
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <span class="form-message required">This is a required field.</span>
+    </div>
+
+    <div class="field">
+      <%= form.label :category %>
+      <%= form.select :category, options_for_select([["development", "development"], ["backlog", "backlog"], ["review", "review"], ["administrative", "administrative"]]) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :delivery_at %>
+      <%= form.datetime_select :delivery_at %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div class="field">
+      <%= form.label :kind_id %>
+      <%= form.select :kind_id, Kind.all.collect{|p| [p.id, p.id]} %>
+    </div>
+  </fieldset>
+
+  <div class="form-actions">
+    <%= link_to "Cancel", tasks_path, class: "other-action" %>
+    <%= form.submit %>
+  </div>
+<% end %>
