@@ -19,7 +19,7 @@
         <td><%= task.name%></td>
         <td><%= task.kind_id%></td>
         <td><%= task.category%></td>
-        <td></td>
+        <td><%= link_to "Edit", edit_task_path(task) %></td>
       </tr>
     <% end %>
   </tbody>
