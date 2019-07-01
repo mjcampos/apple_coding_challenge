@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.references :kind, null: false
       t.datetime :delivery_at
       t.text :description
-      t.integer :category
+      t.string :category
 
       t.timestamps
     end

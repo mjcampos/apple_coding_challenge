@@ -14,7 +14,7 @@ class KindsController < ApplicationController
 
   def create
     kind = Kind.create(kind_params)
-    if kind.name.length >= 5 && (params[:kind][:size].to_i > kind.min_size)
+    if kind.valid?
       if kind.save
         flash[:notice] = "Kind good enough!"
         redirect_to kinds_path

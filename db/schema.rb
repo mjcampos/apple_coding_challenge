@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171115161308) do
     t.integer "kind_id", null: false
     t.datetime "delivery_at"
     t.text "description"
-    t.integer "category"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kind_id"], name: "index_tasks_on_kind_id"
